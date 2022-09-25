@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head> 
+    <meta charset="utf-8">
+    <title>First App</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <h1>Fill Out Form To Sign Up</h1>
+        <form method="POST">
+            {{form.as_p}}
+            {% csrf_token %}
+         <input type="submit" class="btn btn-primary" value="submit">
+    </form>
+    </div>
+
+
+</body>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head> 
+    <meta charset="utf-8">
+    <title>First App</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+</head>
+
+<body>
+    <h1>index.html</h1>
+    <img src= "{% static "images/Laser_Placement.jpg" %}" alt ="fail to load image">
+    {{ insert_me }}
+
+    <div class='djangtwo'>
+        {% if access_records %}
+            <table>
+                <thead>
+                    <th>Site Name</th>
+                    <th>Date Assessed</th>
+                </thead>
+        
+
+        {% for acc in access_records %}
+        <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+        </tr>    
+        {% endfor %}
+    </table>
+    
+    {% else %}
+        <p>No access records found</p>
+    {% endif %}
+    
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1> Welcome to Homepage </h1>
+    </div>
+</div>
+
+<h2>Sign Up</h2>
+
+<h1>URL Templates</h1>
+{{ text }}
+{{ number }}
+
+</body>
